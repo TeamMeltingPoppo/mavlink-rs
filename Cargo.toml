@@ -1,0 +1,80 @@
+
+[package]
+name = "mavlink"
+version = "0.18.0"
+authors = [
+    "Todd Stellanova",
+    "Michal Podhradsky",
+    "Kevin Mehall",
+    "Tim Ryan",
+    "Patrick José Pereira",
+    "Ibiyemi Abiodun",
+]
+build = "build/main.rs"
+description = "Implements the MAVLink data interchange format for UAVs."
+license = "MIT/Apache-2.0"
+repository = "https://github.com/mavlink/rust-mavlink"
+edition = "2024"
+
+[build-dependencies]
+mavlink-bindgen = { version = "=0.18.0", default-features = false }
+
+[dependencies]
+mavlink-core = { version = "=0.18.0", default-features = false }
+crc-any = { version = "2.3.5", default-features = false }
+num-traits = { version = "0.2", default-features = false }
+num-derive = "0.5"
+bitflags = { version = "2.9.1", default-features = false }
+serde = { version = "1.0.115", optional = true, features = ["derive"] }
+serde_arrays = { version = "0.2.0", optional = true }
+arbitrary = { version = "1.4", optional = true, features = ["derive"] }
+rand = { version = "0.10.1", optional = true, default-features = false, features = ["std", "std_rng"] }
+ts-rs = {version = "*", optional=true }
+
+[features]
+default = [
+    "embedded",
+    "dialect-swingby",
+    "format-generated-code",
+]
+
+mav2-message-extensions = ["mavlink-bindgen/mav2-message-extensions"]
+mav2-message-signing = ["mavlink-core/mav2-message-signing"]
+
+dialect-adopted_common = []
+dialect-minimal = []
+dialect-standard = []
+dialect-swingby = []
+
+std = ["mavlink-core/std"]
+embedded = ["mavlink-core/embedded"]
+tokio = ["mavlink-core/tokio"]
+format-generated-code = []
+serde = [
+    "bitflags/serde",
+    "dep:serde",
+    "dep:serde_arrays",
+    "mavlink-core/serde",
+]
+arbitrary = [
+    "dep:arbitrary",
+    "dep:rand",
+    "mavlink-bindgen/arbitrary",
+    "mavlink-core/arbitrary",
+    "bitflags/arbitrary",
+]
+
+[package.metadata.docs.rs]
+# Build with all features except ts-rs on docs.rs so that users viewing documentation
+# can see everything
+features = [
+    "default",
+    "mav2-message-extensions",
+    "mav2-message-signing",
+    "embedded",
+
+    "dialect-adopted_common",
+    "dialect-minimal",
+    "dialect-standard",
+    "dialect-swingby",
+]
