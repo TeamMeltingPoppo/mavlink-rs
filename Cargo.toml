@@ -25,7 +25,7 @@ serde = { version = "1.0.115", optional = true, features = ["derive"] }
 serde_arrays = { version = "0.2.0", optional = true }
 arbitrary = { version = "1.4", optional = true, features = ["derive"] }
 rand = { version = "0.10.1", optional = true, default-features = false, features = ["std", "std_rng"] }
-ts-rs = { version = "11.0.1", optional = true }
+ts-rs = { version = "12.0.0", optional = true }
 futures = { version = "0.3.34", optional = true, default-features = false, features = ["std"] }
 
 num-traits = { version = "0.2", default-features = false }
