@@ -12,7 +12,7 @@ repository = "https://github.com/teammeltingpoppo/mavlink-rs"
 edition = "2024"
 
 [build-dependencies]
-mavlink-bindgen = { version = "=0.18.0", default-features = false }
+mavlink-bindgen = { version = "=0.19.1", default-features = false }
 
 [[example]]
 name = "mavlink-dump"
