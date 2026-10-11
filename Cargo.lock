@@ -63,12 +63,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "byteorder"
-version = "1.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
-
-[[package]]
 name = "bytes"
 version = "1.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -342,20 +336,19 @@ dependencies = [
 
 [[package]]
 name = "mavlink-core"
-version = "0.18.0"
+version = "0.19.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b31cc9f930c7edce0c1933659d405a330a28346cdf087bd283a56a6d72eb3d85"
+checksum = "3c71af820ebc18c4a21abe634bf297dc0dde578edc92e9b538c0c50c9ea4b69d"
 dependencies = [
  "arbitrary",
  "async-trait",
- "byteorder",
  "crc-any",
  "embedded-io",
  "embedded-io-async",
  "futures",
- "rand 0.9.5",
+ "memchr",
+ "rand 0.10.3",
  "serde",
- "serde_arrays",
  "serialport",
  "sha2",
  "tokio",
