@@ -326,16 +326,14 @@ dependencies = [
 
 [[package]]
 name = "mavlink-bindgen"
-version = "0.18.0"
+version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "055c957f9fe541226e5b6f0a8aef09b81b9ac865bfc2d083bd6440ed1692602f"
+checksum = "695fe1dff0efebde67fde50fb800f4703e8188e0447ab6332f48cb3066bcf982"
 dependencies = [
- "arbitrary",
  "crc-any",
  "proc-macro2",
  "quick-xml",
  "quote",
- "rand 0.9.5",
  "regex",
  "thiserror",
 ]
@@ -462,9 +460,9 @@ dependencies = [
 
 [[package]]
 name = "quick-xml"
-version = "0.39.4"
+version = "0.41.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cdcc8dd4e2f670d309a5f0e83fe36dfdc05af317008fea29144da1a2ac858e5e"
+checksum = "e660451e55124f798a69a5af3f49ccfbefbd41910eefd25caf2393e1f3473ec1"
 dependencies = [
  "memchr",
 ]
